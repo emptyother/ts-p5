@@ -1,7 +1,19 @@
 import c from './canvas';
 import { Square } from './square';
 
-var f = new Square();
+var square = new Square();
 c.draw = function () {
-	f.draw();
+	square.draw();
+	if (c.keyIsDown(c.DOWN_ARROW)) {
+		square.move(0, 1);
+	}
+	if (c.keyIsDown(c.UP_ARROW)) {
+		square.move(0, -1);
+	}
+	if (c.keyIsDown(c.LEFT_ARROW)) {
+		square.move(-1, 0);
+	}
+	if (c.keyIsDown(c.RIGHT_ARROW)) {
+		square.move(1, 0);
+	}
 }
